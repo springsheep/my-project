@@ -83,6 +83,7 @@ export default defineConfig(({ mode }: any) => {
                   },
             },
             build: {
+                  outDir: 'docs',
                   rollupOptions: {
                         output: {
                               chunkFileNames: 'static/js/[name]-[hash].js',

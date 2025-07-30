@@ -1,1 +1,0 @@
-System.register(["./api-legacy-BIccgarC.js","./index-legacy-5cG37oqY.js"],function(e,r){"use strict";var t,a,n;return{setters:[e=>{t=e.GYOrderPage},e=>{a=e.a9,n=e.aa}],execute:function(){e("GYOrderPageGet",function(e){return a(t,n.GET,e)})}}});

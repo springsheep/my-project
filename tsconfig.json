@@ -1,0 +1,31 @@
+{
+      "extends": "@vue/tsconfig/tsconfig.web.json",
+      "include": [
+            "env.d.ts",
+            "src/**/*.ts",
+            "src/**/*.tsx",
+            "src/**/*.vue",
+            "types/*.d.ts",
+            "vite.config.ts",
+            "src/utils/ssoLogin.ts",
+            "./auto-imports.d.ts" // 导入上一步生成的配置文件
+      ],
+      "exclude": ["node_modules", "dist", "**/*.js"],
+      "compilerOptions": {
+            "ignoreDeprecations": "5.0",
+            "baseUrl": ".",
+            "paths": {
+                  "@/*": ["./src/*"]
+            },
+            "lib": ["dom", "es5", "es2015.promise", "es2015", "es2017"],
+            "allowSyntheticDefaultImports": true,
+            "allowImportingTsExtensions": true,
+            "noEmit": true,
+            "types": ["vite/client"]
+      },
+      "references": [
+            {
+                  "path": "./tsconfig.config.json"
+            }
+      ]
+}

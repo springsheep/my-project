@@ -1,0 +1,44 @@
+@import "./variables.less";
+
+body {
+  height: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB,
+    Microsoft YaHei, Arial, sans-serif;
+  color: var(--van-text-color);
+  background-color: var(--color-background-2);
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+#app {
+  height: 100%;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+/* vant4的 Toast 和 Popup 样式冲突,会导致 Toast 变成白底 */
+.van-popup.van-toast {
+  background: var(--van-toast-background) !important;
+  box-sizing: content-box !important;
+  /* 下面3条css,影响不大 */
+  transition: all var(--van-duration-fast) !important;
+  width: var(--van-toast-default-width) !important;
+  max-width: var(--van-toast-max-width) !important;
+}
+.van-popup.van-toast .van-toast__icon {
+  font-size: var(--van-toast-icon-size) !important;
+}
+.van-notify--danger {
+  background: var(--van-notify-danger-background) !important;
+}

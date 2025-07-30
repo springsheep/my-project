@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+      <head>
+            <meta charset="UTF-8" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+            <link rel="icon" href="/favicon.ico" />
+            <title>项目查询</title>
+      </head>
+
+      <body>
+            <div id="app">
+                  <style>
+                        html,
+                        body,
+                        #app {
+                              height: 100%;
+                              margin: 0px;
+                              padding: 0px;
+                              width: 100%;
+                        }
+
+                        .__spinner-container {
+                              height: 100%;
+                              display: flex;
+                              flex-direction: column;
+                              align-items: center;
+                              justify-content: center;
+                        }
+
+                        /* HTML: <div class="loader"></div> */
+                        .loader {
+                              width: fit-content;
+                              font-weight: bold;
+                              font-family: monospace;
+                              font-size: 30px;
+                              background: radial-gradient(circle closest-side, #000 94%, #0000) right/calc(200% - 1em) 100%;
+                              animation: l24 1s infinite alternate linear;
+                        }
+                        .loader::before {
+                              content: 'Loading...';
+                              line-height: 1em;
+                              color: #0000;
+                              background: inherit;
+                              background-image: radial-gradient(circle closest-side, #fff 94%, #000);
+                              -webkit-background-clip: text;
+                              background-clip: text;
+                        }
+
+                        @keyframes l24 {
+                              100% {
+                                    background-position: left;
+                              }
+                        }
+                  </style>
+                  <div class="__spinner-container">
+                        <div class="loader"></div>
+                  </div>
+            </div>
+            <script type="text/javascript" src="https://wxwork.h3c.com/weixinjs/jquery-3.1.0.min.js"></script>
+            <script type="text/javascript" src="https://wxwork.h3c.com/prod/workflowHttps/jweixin-1.2.0.js"></script>
+            <% if (ENV==="production" ) { %>
+            <script type="text/javascript" src="https://wxwork.h3c.com/weixinjs/wxjs-sdk.js"></script>
+            <script>
+                  // $(function () {
+                  //隐藏企业微信右上角“...”按钮中的菜单项，例如隐藏微信自带转发、分享功能，此函数包含调用鉴权函数
+                  // wxHideHeadMenus('1000363', 1) //Source 1或2
+                  // })
+            </script>
+            <% } else { %>
+            <script type="text/javascript" src="https://wxwork.h3c.com/weixinjs/test/wxjs-sdk.js"></script>
+            <script>
+                  $(function () {
+                        //隐藏企业微信右上角“...”按钮中的菜单项，例如隐藏微信自带转发、分享功能，此函数包含调用鉴权函数
+                        // wxHideHeadMenus('1000017', 1);//Source 1或2
+                        // WxJsConfig('1000017', 1);//
+                  })
+                  // wxHideHeadMenus('1000268', 1) //Source 1或2
+                  // })
+            </script>
+            <% } %>
+
+            <script type="module" src="/src/main.ts"></script>
+            <% if (ENABLE_ERUDA==="true" ) { %>
+            <script src="/eruda.js"></script>
+            <script>
+                  eruda.init()
+            </script>
+            <% } %>
+            <script type="text/javascript">
+                  window._AMapSecurityConfig = {
+                        serviceHost: 'https://wxwork.h3c.com/_AMapService',
+                  }
+            </script>
+
+            <!-- <script type="text/javascript">
+      window._AMapSecurityConfig = {
+        serviceHost: "https://xingcheng-amap-proxy.h3c.com/_AMapService"
+      };
+    </script>
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=c1e805835699df0be6400274860350cd"></script> -->
+      </body>
+</html>

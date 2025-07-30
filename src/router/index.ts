@@ -1,9 +1,9 @@
-import { createRouter, createWebHashHistory, type RouteLocationNormalized } from 'vue-router'
+import { createRouter, createWebHistory, type RouteLocationNormalized } from 'vue-router'
 import routes from './routes'
 
 // userStore.login()
 const router = createRouter({
-      history: createWebHashHistory(import.meta.env.VITE_PUBLIC_PATH),
+      history: createWebHistory(import.meta.env.VITE_PUBLIC_PATH),
       routes,
 })
 

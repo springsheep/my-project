@@ -20,7 +20,7 @@ onMounted(async () => {
       if (qrcodeCanvas.value) {
             try {
                   // 生成home页面的完整URL
-                  const homeUrl = `${window.location.origin}/home`
+                  const homeUrl = `${window.location.origin}${import.meta.env.VITE_PUBLIC_PATH}/home`
 
                   await QRCode.toCanvas(qrcodeCanvas.value, homeUrl, {
                         width: 200,
